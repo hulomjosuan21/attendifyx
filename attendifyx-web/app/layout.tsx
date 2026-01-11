@@ -1,11 +1,11 @@
 import type { Metadata } from "next";
 import { Montserrat } from "next/font/google";
-import "./globals.css";
+import "./styles/globals.css";
 import Providers from "@/app/providers";
 
 const montserrat = Montserrat({
-    variable: "--font-montserrat",
-    subsets: ["latin"],
+  variable: "--font-montserrat",
+  subsets: ["latin"],
 });
 
 export const metadata: Metadata = {
@@ -19,15 +19,11 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" suppressContentEditableWarning>
-      <body
-        className={`${montserrat.variable} font-sans`}
-      >
-          <Providers>
-              <main>
-                {children}
-              </main>
-          </Providers>
+    <html lang="en" suppressHydrationWarning>
+      <body className={`${montserrat.variable} font-sans`}>
+        <Providers>
+          <main>{children}</main>
+        </Providers>
       </body>
     </html>
   );

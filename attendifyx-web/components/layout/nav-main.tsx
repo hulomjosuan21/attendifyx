@@ -8,7 +8,9 @@ import {
     SidebarMenuItem,
 } from "@/components/ui/sidebar"
 import {ReactNode} from "react";
-import {CircleFadingPlus, LucideIcon, Mail} from "lucide-react";
+import {CircleFadingPlus, LucideIcon, Mail, Search} from "lucide-react";
+import {Input} from "@/components/ui/input";
+import {SearchForm} from "@/forms/SearchForm";
 
 export function NavMain({
                             items,
@@ -24,21 +26,7 @@ export function NavMain({
             <SidebarGroupContent className="flex flex-col gap-2">
                 <SidebarMenu>
                     <SidebarMenuItem className="flex items-center gap-2">
-                        <SidebarMenuButton
-                            tooltip="Quick Create"
-                            className="bg-primary text-primary-foreground hover:bg-primary/90 hover:text-primary-foreground active:bg-primary/90 active:text-primary-foreground min-w-8 duration-200 ease-linear"
-                        >
-                            <CircleFadingPlus/>
-                            <span>Quick Create</span>
-                        </SidebarMenuButton>
-                        <Button
-                            size="icon"
-                            className="size-8 group-data-[collapsible=icon]:opacity-0"
-                            variant="outline"
-                        >
-                            <Mail/>
-                            <span className="sr-only">Inbox</span>
-                        </Button>
+                        <SearchForm/>
                     </SidebarMenuItem>
                 </SidebarMenu>
                 <SidebarMenu>

@@ -1,8 +1,7 @@
-import { pgSchema, uuid, text } from "drizzle-orm/pg-core";
+import { pgTable, uuid, varchar, pgSchema } from "drizzle-orm/pg-core";
 
-export const authSchema = pgSchema("auth");
+const authSchema = pgSchema("auth");
 
-export const authUsers = authSchema.table("users", {
-    id: uuid("id").primaryKey(),
-    email: text("email"),
+export const users = authSchema.table("users", {
+  id: uuid("id").primaryKey(),
 });
